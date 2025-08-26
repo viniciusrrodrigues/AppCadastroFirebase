@@ -45,6 +45,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -137,7 +138,7 @@ fun RegisterScreen(
     val db = Firebase.firestore
 
     // Cores do tema
-    val primaryColor = Color(0xFF5EA500) // Nova cor verde do primeiro código
+    val primaryColor = Color(0xFF4169E1) // Nova cor verde do primeiro código
     val primaryDarkColor = Color(0xFF4A8400)
     val textColor = Color.White
     val cardBackground = Color(0xFF1E1E1E) // Fundo escuro como no primeiro código
@@ -174,7 +175,7 @@ fun RegisterScreen(
             ) {
                 // Adicionando a logo no topo
                 Image(
-                    painter = painterResource(id = R.drawable.etec),
+                    painter = painterResource(id = R.drawable.registrar),
                     contentDescription = "Logo",
                     modifier = Modifier
                         .size(100.dp)
@@ -182,7 +183,7 @@ fun RegisterScreen(
                 )
                 Text(
                     "Registro",
-                    fontFamily = FontFamily.Cursive,
+                    fontFamily = FontFamily.SansSerif,
                     fontSize = 26.sp,
                     color = primaryColor,
                     modifier = Modifier.padding(vertical = 24.dp)
@@ -318,8 +319,8 @@ fun HomeScreen(
     val scrollState = rememberScrollState() // Adicionando estado de scroll
 
     // Cores do tema do primeiro código
-    val backgroundColor = Color(0xFF121212)
-    val primaryColor = Color(0xFF5EA500)
+    val backgroundColor = Color.DarkGray
+    val primaryColor = Color(0xFF4169E1)
     val textColor = Color.White
     val cardBackground = Color(0xFF1E1E1E)
 
@@ -380,7 +381,7 @@ fun HomeScreen(
             contentAlignment = Alignment.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.etec),
+                painter = painterResource(id = R.drawable.verificado),
                 contentDescription = "Logo",
                 modifier = Modifier
                     .size(100.dp)
@@ -398,7 +399,7 @@ fun HomeScreen(
         ) {
             Text(
                 "Bem-vindo, $userName!",
-                fontFamily = FontFamily.Cursive,
+                fontFamily = FontFamily.SansSerif,
                 fontSize = 26.sp,
                 color = primaryColor,
                 modifier = Modifier.padding(vertical = 24.dp)
@@ -456,11 +457,13 @@ fun LoginScreen(
     val db = Firebase.firestore
 
     // Cores do tema do primeiro código
-    val backgroundColor = Color(0xFF121212)
-    val primaryColor = Color(0xFF5EA500)
+    val backgroundColor = Color(0xFF4169E1)
+    val primaryColor = Color.Gray
     val textColor = Color.White
-    val cardBackground = Color(0xFF1E1E1E)
+    val cardBackground = Color.DarkGray
+
     val labelColor = Color.Gray
+
 
     Column(
         modifier = Modifier
@@ -471,6 +474,7 @@ fun LoginScreen(
         verticalArrangement = Arrangement.Center
     ) {
         // Adicionando a logo no topo
+
         Image(
             painter = painterResource(id = R.drawable.etec),
             contentDescription = "Logo",
